@@ -1,0 +1,135 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+  flex-wrap: wrap;
+  min-height: 100%; 
+  background-color: rgb(255, 239, 222);
+}
+
+fieldset{
+  margin: 3em 0;
+  padding: 2em;
+  padding-top: 1em;
+  border-radius: 1em;
+  border: 2px solid rgb(153, 65, 20);
+  background-color: white;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-info{
+    width: 50%;
+}
+
+.summary{
+    display: flex;
+    width: 250px;
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0 0.2em;
+  color: rgb(153, 65, 20);
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+  padding: 2em 1em;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(153, 65, 20);
+}
+
+.input-group input{
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid rgb(247, 148, 30);
+  height: 3em;
+  width: 100%;
+}
+textarea{
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid rgb(247, 148, 30);
+    width: 100%;
+    resize: none;
+    resize: none;
+}
+
+input:focus , textarea:focus{
+  outline:2px solid rgb(153, 65, 20);
+  color: rgb(153, 65, 20);
+}
+
+.checkout-btn{
+  border-radius: 5px;
+  border: 1px solid;
+  height: 3em;
+  width: 100%;
+  margin-top: 0.5em;
+  background-color: rgb(247, 148, 30);
+  color: rgb(153, 65, 20);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.checkout-btn:hover{
+  background-color:rgb(255, 239, 222);
+}
+
+.checkout-btn:active {
+  background-color: rgb(247, 148, 30);
+}
+
+.payment-method > label{
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(153, 65, 20);
+}
+.radio{
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+.radio-input-group label{
+    margin: 0.5em;
+    color: rgb(153, 65, 20);
+    cursor: pointer;
+}
+.radio-input-group input{
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 1px solid rgb(247, 148, 30);
+  cursor: pointer;
+  margin: 0;
+  transition: border-color 0.2s ease;
+}
+.radio-input-group input[type="radio"]:checked {
+  background-image: radial-gradient(circle, rgb(153, 65, 20) 0%, rgb(153, 65, 20) 45%, transparent 50%);
+}
+
+.summary p{
+    color: rgb(153, 65, 20);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}

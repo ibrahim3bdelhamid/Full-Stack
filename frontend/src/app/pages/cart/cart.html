@@ -1,0 +1,36 @@
+<fieldset class="cart-container">
+    <legend>Shopping Cart</legend>
+
+    @if (cartItems().length === 0) {
+        <p>You haven't added anything yet.</p>
+    } @else {
+        @for (item of cartItems(); track item.product._id) {
+        <div class="cart-item">
+            <img [src]="item.product.image" [alt]="item.product.name">
+
+            <h3>{{ item.product.name }}</h3>
+
+            <p>{{ item.product.price }} EGP</p>
+
+            <div class="quantity-controls">
+                <button (click)="updateQuantity(item.product._id, item.amount - 1)">-</button>
+                <span>{{ item.amount }}</span>
+                <button (click)="updateQuantity(item.product._id, item.amount + 1)">+</button>
+            </div>
+            
+            <button class="remove-btn" (click)="removeItem(item.product._id)">
+                <i class="fa-solid fa-trash" style="color: rgb(112, 46, 20);"></i>
+            </button>
+        </div>
+        }
+    }
+
+</fieldset>
+
+<fieldset class="cart-summary">
+    
+    <p>Total: {{ total }} EGP</p>
+    <button routerLink="checkout" class="checkout-btn" >Proceed to Checkout</button>
+    
+</fieldset>
+

@@ -1,0 +1,20 @@
+
+.aboutSection{
+    display: grid;
+    grid-template-columns: auto 600px;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    padding: 140px 250px;
+    background-color: rgb(255, 239, 222);
+}
+
+.aboutSection h1{
+    font-size: 2rem;
+    color: rgb(153, 65, 20);
+
+}
+.aboutSection p{
+    margin-top: 2em;
+    color: rgb(153, 65, 20);
+}

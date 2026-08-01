@@ -1,0 +1,26 @@
+<fieldset>
+    <legend>Confirm Your Account</legend>
+
+    <p class="hint">We emailed you a confirmation code — enter it below to activate your account.</p>
+
+    <form [formGroup]="verifyForm" (ngSubmit)="submitForm()">
+
+        <div class="input-group">
+            <label for="email">Email Address: </label>
+            <input type="email" id="email" formControlName="email" required>
+        </div>
+
+        <div class="input-group">
+            <label for="code">Confirmation Code: </label>
+            <input type="text" id="code" formControlName="code" required>
+        </div>
+
+        <button type="submit" class="submit-btn">Confirm</button>
+
+    </form>
+
+    @if (errorMessage()) {
+        <p class="error-message">{{ errorMessage() }}</p>
+    }
+
+</fieldset>

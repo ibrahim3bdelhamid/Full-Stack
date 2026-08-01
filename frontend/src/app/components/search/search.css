@@ -1,0 +1,30 @@
+.search-form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 8px;
+    width: 50em;
+    height: 5em;
+    margin: 1em;
+}
+.search-input{
+    width: 100%;
+    border: solid rgb(153, 65, 20);
+    outline: none;
+    padding: 14px 16px 14px 52px;
+    border-radius: 5em;
+    margin: 2px;
+}
+.search-button{
+    border: solid rgb(153, 65, 20);
+    outline: rgb(153, 65, 20);
+    padding: 14px;
+    width: 5em;
+    border-radius: 5em;
+    margin: 2px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.search-button:hover {
+  background-color: rgb(255, 239, 222);
+}

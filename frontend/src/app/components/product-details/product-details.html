@@ -1,0 +1,31 @@
+@if (product()) {
+  <div class="details-container">
+    <img [src]="product().image" [alt]="product().name">
+
+    <div class="details-content">
+      <h1>{{ product().name }}</h1>
+      <p class="price">{{ product().price }} EGP</p>
+      <p class="description">Sourced fresh and handpicked for quality, this item is a customer favorite. Stock is limited, so grab yours before it's gone.</p>
+      <p class="stock">
+        @if (product().stock > 0) {
+          Available Now
+        } @else {
+          Currently Unavailable
+        }
+      </p>
+
+      <button class="addToCartBtn" (click)="addToCart()" [disabled]="product().stock === 0">
+        Add to Cart
+      </button>
+    </div>
+    
+  </div>
+} @else if (notFound()) {
+  <div class="not-found">
+    <p>We couldn't find that product.</p>
+  </div>
+} @else {
+  <div class="loading">
+    <p>Fetching product details...</p>
+  </div>
+}

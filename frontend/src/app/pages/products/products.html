@@ -1,0 +1,8 @@
+<div class="card-container">
+  
+  @for (product of products(); track product._id) {
+    <app-product-card [product]="product" />
+  } @empty {
+    <p>We couldn't find any matching products.</p>
+  }
+</div>

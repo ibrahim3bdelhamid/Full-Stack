@@ -1,0 +1,14 @@
+
+<div class="card" (click)="viewDetails()">
+
+  <img [src]="product().image" alt="{{ product().name }}">
+  <div class="card-content">
+    <h3 class="name">{{ product().name }}</h3>
+    <p class="price">{{ product().price }} EGP</p>
+  </div>
+  <button class="addToCartBtn" (click)="addToCart($event)">Add to Cart</button>
+</div>
+
+
+
+  

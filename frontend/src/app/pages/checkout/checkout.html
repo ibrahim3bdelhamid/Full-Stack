@@ -1,0 +1,46 @@
+<fieldset class="checkout-info">
+
+    <form>
+
+        <div class="input-group">
+            <label for="phone">Contact Number: </label>
+            <input type="tel" id="phone" name="phone" pattern="^01[0125][0-9]{8}$" placeholder="01xxxxxxxxx" required>
+        </div>
+
+        <div class="input-group">
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" rows="4" placeholder="Where should we deliver your order?" required></textarea>
+        </div>
+
+        <div class="payment-method">
+            <label for="payment">How will you pay?</label>
+
+            <div class="radio">
+                <div class="radio-input-group">
+                    <input type="radio" id="cash" name="payment" value="cash" required>
+                    <label for="cash">Cash on Delivery</label>
+                </div>
+
+                <div class="radio-input-group">
+                    <input type="radio" id="card" name="payment" value="card" required>
+                    <label for="card">Credit / Debit Card</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="notes">Delivery Notes:</label>
+            <textarea id="notes" name="notes" rows="2" placeholder="Anything the courier should know?"></textarea>
+        </div>
+
+    </form>
+</fieldset>
+
+<fieldset class="summary">
+    <p>Total: {{total}} EGP</p>
+    <button (click)="placeOrder()" class="checkout-btn" >Place Order</button>
+
+    @if (errorMessage()) {
+        <p class="error-message">{{ errorMessage() }}</p>
+    }
+</fieldset>

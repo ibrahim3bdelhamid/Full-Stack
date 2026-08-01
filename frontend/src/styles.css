@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Stack Sans Text", sans-serif;
+  font-weight: 300;
+}
+
+html, body {
+  height: 100%;
+  background-color: rgb(247, 148, 30);
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+router-outlet + * {
+  flex: 1;
+}
+
+app-footer {
+  margin-top: auto;
+}

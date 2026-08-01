@@ -1,0 +1,57 @@
+a{
+    text-decoration: none;
+}
+.card{
+    width: 280px;
+    padding: 8px;
+    border-radius: 2em;
+    background-color: rgb(255, 239, 222);
+    cursor: pointer;
+    border: solid 3px rgb(255, 239, 222);
+}
+.card:hover{
+    animation: cardHover 0.5s forwards;
+    cursor: pointer;
+}
+
+
+@keyframes cardHover {
+    100% {
+    border-color: rgb(153, 65, 20);
+    }
+}
+
+.card img{
+    width: 100%;
+    height: 230px;
+    border-radius: 2em;
+}
+
+.card-content{
+    margin: 1em;
+    cursor: pointer;
+    color: rgb(153, 65, 20);
+}
+
+.addToCartBtn{
+  border-radius: 5px;
+  border: 1px solid;
+  height: 3em;
+  border-radius: 2em;
+  width: 100%;
+  background-color: rgb(247, 148, 30);
+  color: rgb(153, 65, 20);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+.addToCartBtn:hover {
+  background-color:rgb(255, 239, 222);
+}
+
+.addToCartBtn:active {
+  background-color: rgb(247, 148, 30);
+}

@@ -1,0 +1,17 @@
+.notFound{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 10%;
+  gap: 2em;
+}
+.notFound img{
+  position: relative;
+  width: 200px;
+  margin-left: -.8em;
+}
+.notFound h1{
+  font-size: 1.5em;
+  color: rgb(153, 65, 20);
+}

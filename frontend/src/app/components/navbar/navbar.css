@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+
+body{
+    background-color: rgb(255, 244, 233) ;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(140, 60, 15, 0.284);
+}
+
+.navbar{
+    display: grid;
+    grid-template-columns: 3fr auto 3fr;
+    align-items: center;
+    padding: 20px 30px;
+    background-color:rgb(247, 148, 30);
+}
+
+.logo{
+    color: rgb(153, 65, 20);
+    font-size: 1.5em;
+    justify-self: start;
+    font-family: "Luckiest Guy";
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2;
+    gap: 2em;
+}
+
+.nav-actions {
+  list-style: none;
+  gap: 2em;
+  display: flex;
+  align-items: center;
+  justify-self: end;
+}
+
+.nav-links li, .nav-actions li{
+    display: inline-block;
+    font-weight: 800;
+}
+
+.nav-links li a, .nav-actions li a{
+    color: rgb(163, 99, 58);
+    text-decoration: none;
+}
+
+.nav-links li a:hover, .nav-actions li a:hover{
+    color: rgb(216, 62, 29);
+    cursor: pointer;
+}
+
+
+.fa-bag-shopping {
+  color: rgb(153, 65, 20);
+}
+
+.fa-bag-shopping:hover {
+  color: rgb(255, 0, 0);
+}
+
+.nav-links li a.link-active,
+.nav-actions li a.link-active {
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+
+#logOut:hover{
+    text-decoration: underline rgb(255, 0, 0);
+    font-weight: bold;
+}

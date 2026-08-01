@@ -1,0 +1,5 @@
+@if (message()) {
+  <div class="toast" [class.error]="message()!.type === 'error'">
+    {{ message()!.text }}
+  </div>
+}

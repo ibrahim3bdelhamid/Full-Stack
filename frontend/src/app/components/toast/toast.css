@@ -1,0 +1,27 @@
+.toast {
+
+  position: fixed;
+  top: 5em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 1em 2em;
+  border-radius: 1em;
+  background-color: rgb(153, 65, 20);
+  color: rgb(255, 239, 222);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  animation: popUp 0.3s ease;
+  z-index: 2100;
+
+}
+
+.toast.error {
+  background-color: rgb(200, 40, 40);
+}
+
+@keyframes popUp {
+  from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
