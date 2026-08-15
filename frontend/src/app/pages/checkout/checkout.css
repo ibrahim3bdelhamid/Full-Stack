@@ -5,7 +5,7 @@
   gap: 2em;
   flex-wrap: wrap;
   min-height: 100%; 
-  background-color: rgb(255, 239, 222);
+  background-color: rgb(240, 248, 255);
 }
 
 fieldset{
@@ -13,7 +13,8 @@ fieldset{
   padding: 2em;
   padding-top: 1em;
   border-radius: 1em;
-  border: 2px solid rgb(153, 65, 20);
+  border: 1px solid rgb(230, 236, 242);
+    box-shadow: 0 2px 14px rgba(0,0,0,0.05);
   background-color: white;
 
   flex-direction: column;
@@ -33,7 +34,7 @@ legend {
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0 0.2em;
-  color: rgb(153, 65, 20);
+  color: rgb(17, 17, 17);
 }
 form{
   display: flex;
@@ -50,28 +51,28 @@ form{
 .input-group label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgb(153, 65, 20);
+  color: rgb(17, 17, 17);
 }
 
 .input-group input{
   padding: 1em;
   border-radius: 5px;
-  border: 1px solid rgb(247, 148, 30);
+  border: 1px solid rgb(66, 165, 245);
   height: 3em;
   width: 100%;
 }
 textarea{
     padding: 1em;
     border-radius: 5px;
-    border: 1px solid rgb(247, 148, 30);
+    border: 1px solid rgb(66, 165, 245);
     width: 100%;
     resize: none;
     resize: none;
 }
 
 input:focus , textarea:focus{
-  outline:2px solid rgb(153, 65, 20);
-  color: rgb(153, 65, 20);
+  outline: 2px solid rgb(66, 165, 245);
+  color: rgb(17, 17, 17);
 }
 
 .checkout-btn{
@@ -80,8 +81,8 @@ input:focus , textarea:focus{
   height: 3em;
   width: 100%;
   margin-top: 0.5em;
-  background-color: rgb(247, 148, 30);
-  color: rgb(153, 65, 20);
+  background-color: rgb(66, 165, 245);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: background-color 0.2s ease;
   font-size: 1rem;
@@ -90,17 +91,17 @@ input:focus , textarea:focus{
 
 
 .checkout-btn:hover{
-  background-color:rgb(255, 239, 222);
+  background-color: rgb(21, 101, 192);
 }
 
 .checkout-btn:active {
-  background-color: rgb(247, 148, 30);
+  background-color: rgb(13, 71, 161);
 }
 
 .payment-method > label{
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgb(153, 65, 20);
+  color: rgb(17, 17, 17);
 }
 .radio{
     display: flex;
@@ -110,7 +111,7 @@ input:focus , textarea:focus{
 
 .radio-input-group label{
     margin: 0.5em;
-    color: rgb(153, 65, 20);
+    color: rgb(17, 17, 17);
     cursor: pointer;
 }
 .radio-input-group input{
@@ -118,17 +119,17 @@ input:focus , textarea:focus{
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  border: 1px solid rgb(247, 148, 30);
+  border: 1px solid rgb(66, 165, 245);
   cursor: pointer;
   margin: 0;
   transition: border-color 0.2s ease;
 }
 .radio-input-group input[type="radio"]:checked {
-  background-image: radial-gradient(circle, rgb(153, 65, 20) 0%, rgb(153, 65, 20) 45%, transparent 50%);
+  background-image: radial-gradient(circle, rgb(17, 17, 17) 0%, rgb(17, 17, 17) 45%, transparent 50%);
 }
 
 .summary p{
-    color: rgb(153, 65, 20);
+    color: rgb(17, 17, 17);
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 0;

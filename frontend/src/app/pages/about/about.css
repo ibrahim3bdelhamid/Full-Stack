@@ -6,15 +6,15 @@
     justify-content: center;
     gap: 4em;
     padding: 140px 250px;
-    background-color: rgb(255, 239, 222);
+    background-color: rgb(240, 248, 255);
 }
 
 .aboutSection h1{
     font-size: 2rem;
-    color: rgb(153, 65, 20);
+    color: rgb(17, 17, 17);
 
 }
 .aboutSection p{
     margin-top: 2em;
-    color: rgb(153, 65, 20);
+    color: rgb(17, 17, 17);
 }

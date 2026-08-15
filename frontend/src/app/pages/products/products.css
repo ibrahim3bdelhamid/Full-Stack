@@ -1,6 +1,93 @@
-.card-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin: 3em;
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.5em;
+  margin: 0 3em 1em;
+  padding: 1.2em 1.5em;
+  background-color: rgb(249, 250, 252);
+  border: 1px solid rgb(235, 238, 242);
+  border-radius: 1em;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  min-width: 150px;
+}
+
+.filter-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(90, 98, 108);
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 0.6em 0.8em;
+  border: 1px solid rgb(222, 228, 235);
+  border-radius: 0.6em;
+  font-size: 0.95rem;
+  color: rgb(17, 17, 17);
+  background-color: rgb(255, 255, 255);
+  outline: none;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  border-color: rgb(66, 165, 245);
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.price-inputs input {
+  width: 80px;
+}
+
+.reset-btn {
+  height: 2.6em;
+  padding: 0 1.4em;
+  border-radius: 0.6em;
+  border: 1px solid rgb(66, 165, 245);
+  background-color: transparent;
+  color: rgb(21, 101, 192);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: rgb(240, 248, 255);
+}
+
+.results-count {
+  margin: 0 3em 0.5em;
+  color: rgb(90, 98, 108);
+  font-size: 0.9rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0 3em 3em;
+}
+
+@media (max-width: 700px) {
+  .filters-bar {
+    margin: 0 1em 1em;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .results-count,
+  .card-container {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 }

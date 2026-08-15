@@ -1,6 +1,51 @@
+<app-search (searchChange)="onSearchChange($event)"></app-search>
+
+<div class="filters-bar">
+  <div class="filter-group">
+    <label for="category">Category</label>
+    <select id="category" [value]="selectedCategory()" (change)="onCategoryChange($event)">
+      @for (c of categories(); track c) {
+        <option [value]="c">{{ c }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="filter-group">
+    <label for="team">Team</label>
+    <select id="team" [value]="selectedTeam()" (change)="onTeamChange($event)">
+      @for (t of teams(); track t) {
+        <option [value]="t">{{ t }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="filter-group price-group">
+    <label>Price (EGP)</label>
+    <div class="price-inputs">
+      <input type="number" min="0" placeholder="Min" [value]="minPrice()" (change)="onMinPriceChange($event)">
+      <span>-</span>
+      <input type="number" min="0" placeholder="Max" [value]="maxPrice()" (change)="onMaxPriceChange($event)">
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <label for="sort">Sort by</label>
+    <select id="sort" [value]="sortOrder()" (change)="onSortChange($event)">
+      <option value="default">Featured</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="rating-desc">Top Rated</option>
+    </select>
+  </div>
+
+  <button class="reset-btn" type="button" (click)="resetFilters()">Reset</button>
+</div>
+
+<p class="results-count">{{ filteredProducts().length }} product(s) found</p>
+
 <div class="card-container">
-  
-  @for (product of products(); track product._id) {
+
+  @for (product of filteredProducts(); track product._id) {
     <app-product-card [product]="product" />
   } @empty {
     <p>We couldn't find any matching products.</p>

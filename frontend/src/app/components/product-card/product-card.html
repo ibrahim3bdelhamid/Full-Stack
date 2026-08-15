@@ -1,14 +1,47 @@
-
 <div class="card" (click)="viewDetails()">
 
-  <img [src]="product().image" alt="{{ product().name }}">
+  <div class="image-wrap">
+    <img [src]="product().image || fallbackImage" (error)="onImageError($event)" [alt]="product().name">
+
+    @if (badgeLabel()) {
+      <span class="badge" [class.badge-sale]="product().badge === 'SALE'" [class.badge-new]="product().badge === 'NEW'" [class.badge-best]="product().badge === 'BEST_SELLER'">{{ badgeLabel() }}</span>
+    }
+
+    <button class="wishlist-btn" type="button" (click)="toggleWishlist($event)" [attr.aria-label]="isWishlisted() ? 'Remove from wishlist' : 'Add to wishlist'">
+      @if (isWishlisted()) {
+        <i class="fa-solid fa-heart"></i>
+      } @else {
+        <i class="fa-regular fa-heart"></i>
+      }
+    </button>
+  </div>
+
   <div class="card-content">
     <h3 class="name">{{ product().name }}</h3>
-    <p class="price">{{ product().price }} EGP</p>
+
+    <div class="price-row">
+      <p class="price">{{ effectivePrice() }} EGP</p>
+      @if (product().discountPercent > 0) {
+        <p class="original-price">{{ product().price }} EGP</p>
+      }
+    </div>
+
+    <div class="rating-row">
+      @for (star of starsArray(ratingStars().full); track $index) {
+        <i class="fa-solid fa-star"></i>
+      }
+      @for (star of starsArray(ratingStars().empty); track $index) {
+        <i class="fa-regular fa-star"></i>
+      }
+      <span class="rating-count">({{ product().ratingCount ?? 0 }})</span>
+    </div>
   </div>
-  <button class="addToCartBtn" (click)="addToCart($event)">Add to Cart</button>
+
+  <button class="addToCartBtn" [class.added]="justAdded()" (click)="addToCart($event)">
+    @if (justAdded()) {
+      ✓ Added to Cart
+    } @else {
+      Add to Cart
+    }
+  </button>
 </div>
-
-
-
-  

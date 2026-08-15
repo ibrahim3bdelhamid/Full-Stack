@@ -1,8 +1,7 @@
-
-<form class="search-form" action="#" method="GET">
-    <input class="search-input" type="text" placeholder="What are you looking for?" required aria-label="Search">
-    <button class="search-button" type="submit">
-        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: rgb(112, 46, 20);"></i>
+<form class="search-form" (submit)="onSubmit($event)">
+    <input class="search-input" type="text" placeholder="Search products (e.g. Barcelona, Jersey)"
+           aria-label="Search products" (input)="onInput($event)">
+    <button class="search-button" type="submit" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: rgb(66, 165, 245);"></i>
     </button>
 </form>
-

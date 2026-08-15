@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  background-color: rgb(255, 239, 222);
+  background-color: rgb(240, 248, 255);
 }
 fieldset{
   background-color: white;
@@ -12,7 +12,8 @@ fieldset{
   padding: 2em;
   padding-top: 1em;
   border-radius: 1em;
-  border: 2px solid #994114;
+  border: 1px solid rgb(230, 236, 242);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +22,7 @@ legend {
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0 0.2em;
-  color: rgb(153, 65, 20);
+  color: rgb(17, 17, 17);
 }
 form{
   display: flex;
@@ -38,20 +39,20 @@ form{
 .input-group label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgb(153, 65, 20);
+  color: rgb(17, 17, 17);
 }
 
 .input-group input{
   padding: 1em;
   border-radius: 5px;
-  border: 1px solid rgb(247, 148, 30);
+  border: 1px solid rgb(66, 165, 245);
   height: 3em;
   width: 400px;
 }
 
 input:focus {
-  outline:2px solid rgb(153, 65, 20);
-  color: rgb(153, 65, 20);
+  outline: 2px solid rgb(66, 165, 245);
+  color: rgb(17, 17, 17);
 }
 
 .submit-btn{
@@ -60,8 +61,8 @@ input:focus {
   height: 3em;
   width: 400px;
   margin-top: 1.2em;
-  background-color: rgb(247, 148, 30);
-  color: rgb(153, 65, 20);
+  background-color: rgb(66, 165, 245);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: background-color 0.2s ease;
   font-size: 1rem;
@@ -69,13 +70,13 @@ input:focus {
 }
 
 .submit-btn:hover {
-  background-color:rgb(255, 239, 222);
+  background-color: rgb(21, 101, 192);
 }
 
 .submit-btn:active {
-  background-color: rgb(247, 148, 30);
+  background-color: rgb(13, 71, 161);
 }
 
 .error-message{
-  color: rgb(153, 65, 20);
+  color: rgb(17, 17, 17);
 }

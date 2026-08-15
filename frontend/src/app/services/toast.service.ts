@@ -14,7 +14,7 @@ export class ToastService {
   private timeoutId: ReturnType<typeof setTimeout> | null = null;
 
 
-  show(text: string, type: 'success' | 'error'='success', duration:number= 500) {
+  show(text: string, type: 'success' | 'error'='success', duration:number= 3000) {
     if(this.timeoutId){
       clearTimeout(this.timeoutId)
     }

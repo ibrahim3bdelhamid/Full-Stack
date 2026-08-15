@@ -1,9 +1,58 @@
-  <header class="hero-section">
-    <div class="hero-container">
-      <h4 class="hero-title">Browse Everything</h4>
-      <p class="hero-subtitle">Everything Your Kitchen Needs, In One Place.</p>
-      
-      <app-search></app-search>
+<header class="hero-section">
+  <div class="hero-container">
+    <span class="hero-badge">Exclusive Collection</span>
+    <h4 class="hero-title">Gear Up. Level Up.</h4>
+    <p class="hero-subtitle">Everything Your Active Lifestyle Needs, In One Place.</p>
 
+    <app-search></app-search>
+
+    <a routerLink="/products" class="hero-cta">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</header>
+
+<section class="features-strip">
+  @for (f of features; track f.title) {
+    <div class="feature-item">
+      <img [src]="f.icon" [alt]="f.title">
+      <div>
+        <h5>{{ f.title }}</h5>
+        <p>{{ f.text }}</p>
+      </div>
     </div>
-  </header>
+  }
+</section>
+
+<section class="categories-section">
+  <h2>Shop by Category</h2>
+  <div class="category-grid">
+    @for (c of categories; track c.name) {
+      <a class="category-card" [routerLink]="['/products']">
+        <img [src]="c.image" [alt]="c.name">
+        <div class="category-overlay">
+          <i class="fa-solid" [class]="c.icon"></i>
+          <span>{{ c.name }}</span>
+        </div>
+      </a>
+    }
+  </div>
+</section>
+
+<section class="trending-section">
+  <h2>Best Sellers</h2>
+
+  @if (loading()) {
+    <p class="state-msg">Loading best sellers...</p>
+  } @else if (bestSellers().length === 0) {
+    <p class="state-msg">No best sellers to show right now.</p>
+  } @else {
+    <div class="trending-container card-container">
+      @for (p of bestSellers(); track p._id) {
+        <app-product-card [product]="p"></app-product-card>
+      }
+    </div>
+  }
+
+  <div class="view-all-wrap">
+    <a routerLink="/products" class="view-all-btn">View All Products</a>
+  </div>
+</section>

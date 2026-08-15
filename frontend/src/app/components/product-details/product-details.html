@@ -1,11 +1,59 @@
 @if (product()) {
   <div class="details-container">
-    <img [src]="product().image" [alt]="product().name">
+    <div class="image-wrap">
+      <img [src]="product().image || fallbackImage" (error)="onImageError($event)" [alt]="product().name">
+      <button class="wishlist-btn" type="button" (click)="toggleWishlist()" [attr.aria-label]="isWishlisted() ? 'Remove from wishlist' : 'Add to wishlist'">
+        @if (isWishlisted()) {
+          <i class="fa-solid fa-heart"></i>
+        } @else {
+          <i class="fa-regular fa-heart"></i>
+        }
+      </button>
+    </div>
 
     <div class="details-content">
       <h1>{{ product().name }}</h1>
-      <p class="price">{{ product().price }} EGP</p>
-      <p class="description">Sourced fresh and handpicked for quality, this item is a customer favorite. Stock is limited, so grab yours before it's gone.</p>
+
+      <div class="rating-row">
+        @for (star of starsArray(ratingStars().full); track $index) {
+          <i class="fa-solid fa-star"></i>
+        }
+        @for (star of starsArray(ratingStars().empty); track $index) {
+          <i class="fa-regular fa-star"></i>
+        }
+        <span class="rating-count">({{ product().ratingCount ?? 0 }} reviews)</span>
+      </div>
+
+      <div class="price-row">
+        <p class="price">{{ effectivePrice() }} EGP</p>
+        @if (product().discountPercent > 0) {
+          <p class="original-price">{{ product().price }} EGP</p>
+          <span class="discount-tag">-{{ product().discountPercent }}%</span>
+        }
+      </div>
+
+      <p class="description">{{ product().description || "Engineered for performance and built to last, this item is a customer favorite." }}</p>
+
+      @if (product().sizes?.length) {
+        <div class="sizes">
+          <p class="sizes-label">Available sizes</p>
+          <div class="size-options">
+            @for (size of product().sizes; track size) {
+              <button type="button" class="size-chip" [class.selected]="selectedSize() === size" (click)="selectSize(size)">{{ size }}</button>
+            }
+          </div>
+        </div>
+      }
+
+      <div class="quantity-row">
+        <p class="quantity-label">Quantity</p>
+        <div class="quantity-stepper">
+          <button type="button" (click)="decreaseQty()" [disabled]="quantity() <= 1">-</button>
+          <span>{{ quantity() }}</span>
+          <button type="button" (click)="increaseQty()" [disabled]="quantity() >= (product().stock ?? 99)">+</button>
+        </div>
+      </div>
+
       <p class="stock">
         @if (product().stock > 0) {
           Available Now
@@ -14,11 +62,15 @@
         }
       </p>
 
-      <button class="addToCartBtn" (click)="addToCart()" [disabled]="product().stock === 0">
-        Add to Cart
+      <button class="addToCartBtn" [class.added]="justAdded()" (click)="addToCart()" [disabled]="product().stock === 0">
+        @if (justAdded()) {
+          ✓ Added to Cart
+        } @else {
+          Add to Cart
+        }
       </button>
     </div>
-    
+
   </div>
 } @else if (notFound()) {
   <div class="not-found">

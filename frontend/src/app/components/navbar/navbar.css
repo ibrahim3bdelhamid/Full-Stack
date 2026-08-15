@@ -1,30 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');
 
 
 body{
-    background-color: rgb(255, 244, 233) ;
+    background-color: rgb(255, 255, 255) ;
 }
 
 header{
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(140, 60, 15, 0.284);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }
 
 .navbar{
     display: grid;
     grid-template-columns: 3fr auto 3fr;
     align-items: center;
-    padding: 20px 30px;
-    background-color:rgb(247, 148, 30);
+    padding: 18px 40px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(235, 238, 242);
 }
 
 .logo{
-    color: rgb(153, 65, 20);
-    font-size: 1.5em;
+    color: rgb(21, 101, 192);
+    font-size: 1.7em;
     justify-self: start;
-    font-family: "Luckiest Guy";
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .nav-links {
@@ -33,12 +36,12 @@ header{
     justify-content: center;
     align-items: center;
     grid-column: 2;
-    gap: 2em;
+    gap: 2.5em;
 }
 
 .nav-actions {
   list-style: none;
-  gap: 2em;
+  gap: 1.8em;
   display: flex;
   align-items: center;
   justify-self: end;
@@ -46,35 +49,58 @@ header{
 
 .nav-links li, .nav-actions li{
     display: inline-block;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .nav-links li a, .nav-actions li a{
-    color: rgb(163, 99, 58);
+    color: rgb(17, 17, 17);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .nav-links li a:hover, .nav-actions li a:hover{
-    color: rgb(216, 62, 29);
+    color: rgb(66, 165, 245);
     cursor: pointer;
 }
 
 
 .fa-bag-shopping {
-  color: rgb(153, 65, 20);
+  color: rgb(17, 17, 17);
+  transition: color 0.2s ease;
 }
 
 .fa-bag-shopping:hover {
-  color: rgb(255, 0, 0);
+  color: rgb(66, 165, 245);
 }
 
 .nav-links li a.link-active,
 .nav-actions li a.link-active {
-  color: rgb(255, 0, 0);
-  font-weight: bold;
+  color: rgb(21, 101, 192);
+  font-weight: 700;
 }
 
 #logOut:hover{
-    text-decoration: underline rgb(255, 0, 0);
+    text-decoration: underline rgb(21, 101, 192);
     font-weight: bold;
+}
+
+.nav-actions li a{
+    position: relative;
+}
+
+.cart-badge{
+    position: absolute;
+    top: -10px;
+    right: -14px;
+    background-color: rgb(66, 165, 245);
+    color: rgb(255, 255, 255);
+    font-size: 0.65em;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
 }
