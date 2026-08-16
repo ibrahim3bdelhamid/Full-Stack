@@ -1,6 +1,6 @@
-# Full-Stack E-Commerce App
+# Ultras — Football Gear E-Commerce App
 
-A full-stack e-commerce application with a Node.js/Express backend and an Angular frontend.
+A modern e-commerce platform for football gear — jerseys, boots, and balls — built with the MEAN stack.
 
 ## Tech Stack
 
@@ -12,9 +12,51 @@ A full-stack e-commerce application with a Node.js/Express backend and an Angula
 - Email confirmation via `nodemailer`
 
 **Frontend**
-- Angular 21
+- Angular (standalone components, signals)
 - Server-Side Rendering (Angular SSR + Express)
 - RxJS
+
+## Screenshots
+
+### Home Page
+Welcoming users with a hero banner and product search.
+
+![Home Page](screenshots/01-home.jpg)
+
+### Secure User Registration
+New users can create an account with full name, age, email, and password.
+
+![Registration](screenshots/02-register.jpg)
+
+### Shop by Category & Best Sellers
+Curated categories and best-selling jerseys, boots, and balls.
+
+![Categories](screenshots/03-categories.jpg)
+
+### Powerful Product Filtering
+Filter products by category, team, and price, or sort results.
+
+![Filtering](screenshots/04-filtering.jpg)
+
+### Full Product Catalog
+16 products spanning jerseys, football boots, and balls, each with ratings and pricing.
+
+![Catalog](screenshots/05-catalog.jpg)
+
+### Interactive Product Details
+A quick-view modal shows sizes, quantity selection, and availability before adding to cart.
+
+![Product Details](screenshots/06-product-details.jpg)
+
+### Real-Time Shopping Cart
+The cart tracks item quantities and totals live, ready for checkout.
+
+![Shopping Cart](screenshots/07-cart.jpg)
+
+### Streamlined Checkout
+A simple checkout flow collects delivery details and payment method before placing the order.
+
+![Checkout](screenshots/08-checkout.jpg)
 
 ## Project Structure
 
@@ -34,9 +76,10 @@ Full-Stack/
 │   │   │   └── user/
 │   │   └── utilities/      # Email templates
 │   └── index.js            # App entry point
-└── frontend/
-    ├── src/                # Angular application source
-    └── angular.json
+├── frontend/
+│   ├── src/                # Angular application source
+│   └── angular.json
+└── screenshots/            # App screenshots used in this README
 ```
 
 ## Getting Started
@@ -75,10 +118,11 @@ Available scripts:
 ## Features
 
 - User authentication with JWT and email confirmation
-- Product catalog and management
-- Shopping cart
-- Checkout flow
-- Order management
+- Dynamic product catalog with category, team & price filtering
+- Product details view with size & quantity selection
+- Shopping cart with real-time totals
+- Multi-step checkout with delivery details & payment options
+- Responsive, SSR-powered Angular frontend
 
 ## License
 
